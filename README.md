@@ -254,8 +254,9 @@ public void saveBitmapToFile(String url, String filePath) {
             }
         }
     }
- ```
+```
 =系统==============================
+
 ```java
 #根据包名打开一个应用程序
 
@@ -304,6 +305,7 @@ public void saveBitmapToFile(String url, String filePath) {
     }
 ```
 #判断是否APK是否安装过
+
 ```java
 public boolean checkApkExist(Context context, String packageName) {
         if (packageName == null || "".equals(packageName))
@@ -331,15 +333,16 @@ public boolean checkApkExist(Context context, String packageName) {
         intent.setDataAndType(Uri.fromFile(file), type);
         context.startActivity(intent);
     }
-    ```
+```
 #卸载APK
+
 ```java
     public void UninstallApk(Context context, String strPackageName) {
         Uri packageURI = Uri.parse("package:" + strPackageName);
         Intent uninstallIntent = new Intent(Intent.ACTION_DELETE, packageURI);
         context.startActivity(uninstallIntent);
     }
-    ```
+```
 #判断SD卡是否可用
 ```java
     public boolean CheckSD() {
@@ -350,7 +353,7 @@ public boolean checkApkExist(Context context, String packageName) {
             return false;
         }
     }
-    ```
+```
 #创建快捷方式：
 ```java
     public void createShortCut(Context contxt) {
@@ -372,7 +375,7 @@ public boolean checkApkExist(Context context, String packageName) {
         installer.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
         contxt.sendBroadcast(installer);
     }
-    ```
+```
 #判断快捷方式是否创建：
 ```java
 private boolean isInstallShortcut() {
@@ -426,7 +429,7 @@ private boolean isInstallShortcut() {
 
         return isInstallShortcut;
     }
-    ```
+```
 #过滤特殊字符：
 ```java
     private String StringFilter(String str) throws PatternSyntaxException {
@@ -438,7 +441,7 @@ private boolean isInstallShortcut() {
         Matcher m = p.matcher(str);
         return m.replaceAll("").trim();
     }
-    ```
+```
 #执行shell语句：
 ```java
     public int execRootCmdSilent(String cmd) {
@@ -467,7 +470,7 @@ private boolean isInstallShortcut() {
         }
         return result;
     }
-    ```
+```
 #获得文件MD5值：
 ```java
     public String getFileMD5(File file) {
@@ -500,4 +503,4 @@ private boolean isInstallShortcut() {
         BigInteger bigInt = new BigInteger(1, digest.digest());
         return bigInt.toString(16);
     }
-    ```
+```
